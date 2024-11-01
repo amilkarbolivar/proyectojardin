@@ -1,0 +1,99 @@
+		<!-- tmcargos05_reporte.hmtl: Progama para construir la opción Reporte del Módulo  TMCargos.  -->
+
+		{% include 'admin/p03_menup01_cabecera.html' %}
+
+		{% include 'tmcargos/tmcargos01_submenu.html' %}	
+
+		<!--- bloque_datos.html: Bloque para gestionar los datos de los proceso -->
+
+		<div class="container text-center">
+			<div class="mb-0 p-5 bg-light">
+
+				<h1 style="color:black">Listando de Cargos</h1>
+
+				{% if mensaje != " " %}
+					<div class="card-footer text-center">
+						<div class="alert alert-danger" role="alert">
+							<strong> {{ mensaje }} </strong>
+						</div>
+					</div>
+				{% endif %}	
+
+			    <table class="table table-striped table-bordered bg-white table-sm">
+			        <thead>
+			        <tr class="table-primary">
+			            <th scope="col">
+							Código
+						</th>
+			            <th scope="col">
+							Descripción
+						</th>
+			            <th scope="col">Sueldo</th>
+			            <th scope="col">Status</th>
+			            <th scope="col" colspan="3">
+							ACCIÓN
+						</th>
+			        </tr>
+			        </thead>
+			        <tbody>
+			            {% for cargo in listadocargos %}
+				            <tr>
+				                <td>
+									{{ cargo[0] }}
+								</td>
+				                <td>
+									{{ cargo[1] }}
+								</td>
+				                <td align="right">
+									{{ cargo[2] }} 
+									&nbsp; &nbsp;
+								</td>
+				                <td>
+									{{ cargo[3] }}
+								</td>
+	
+								<td width ="75px">
+									<form action="/tmcargos/consultar" method="POST">
+										<input type="text" id="txt_codcar" name="txt_codcar" 
+																		value = "{{ cargo[0]}}" hidden/>
+
+										<button type="submit" value="Submit" class="btn btn-success"
+												title="Click para realizar la consulta...">
+												consultar
+										</button>
+									</form>
+								</td>	
+								
+								<td width ="75px">
+									<form action="/tmcargos/consultar" method="POST">
+										<input type="text" id="txt_codcar" name="txt_codcar" 
+																		value = "{{ cargo[0]}}" hidden/>
+
+										<button type="submit" value="Submit" class="btn btn-warning"
+												title="Click para realizar la Modificación...">
+												Modificar
+										</button>
+									</form>
+								</td>
+
+				                <td width ="75px">
+									<a href="{{ url_for('tmcargos.eliminar', xcodcar = cargo[0]) }}" 
+												class="btn btn-danger btn-delete"
+												title="Click para eliminar este registro...">
+										Eliminar
+									</a>
+				                </td>
+				            </tr>
+			            {% endfor %}
+
+			        </tbody>
+			    </table>
+			</div>
+			<br/>
+			<br/>
+			<img src="../static/imagenes/pie.gif" width="600" height="17" alt="Regla horizontal"/>
+			<br/>			
+			<br/>
+		</div>
+
+		{% include 'admin/p03_menup04_pie.html' %}

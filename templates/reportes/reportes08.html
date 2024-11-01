@@ -1,0 +1,39 @@
+{% include 'admin/p03_menup01_cabecera.html' %}
+
+{% include 'reportes/reportes02.html' %}	
+
+
+<div class="container mt-5">
+    <h1 class="text-center">reporte de una fecha a otra</h1>
+    <div class="card">
+        <div class="card-body">
+            <form action="/reportes/fecha" method="POST">
+                <!-- Campo oculto para la cédula -->
+
+                <label class="text-info" for="">CEDULA</label>
+                <input type="text" class="form-control" name="cedula" id="txt_descripcion"
+                placeholder="Escriba la cedula" required />
+                <label class="text-info" for="">FECHA 1</label>
+        
+
+                <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" name="fecha" id="fecha" required>
+                </div>
+                <label class="text-info" for="">FECHA 2</label>
+             
+                <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" name="fecha2" id="fecha" required>
+                </div>
+
+                <div class="text-center">
+                    <button value="submit" type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% include 'admin/p03_menup04_pie.html' %}

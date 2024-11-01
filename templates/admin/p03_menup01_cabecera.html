@@ -1,0 +1,80 @@
+<!-- p03_menup01_cabecera.hmtl:Paso # 3 - Menú Principal - cabecera . 
+			Progama para construir la cabecera del menú principal del sistema -->
+<!DOCTYPE html>
+<html lang="es">
+     <head>
+     	<meta charset="utf-8"/>
+		<title>Módulo Administrativo - El Jardín</title>
+		<meta name="description" content="Proyecto Python - BootStarp - PostgreSQL"/>
+		<meta name="author" content="Sergio Capacho" />
+		<meta name="keywords" content="Html, bootstrap, Python, PostGreSQL" />
+
+		<LINK REL="SHORTCUT ICON" type="image/x-icon" HREF="../static/imagenes/flor01.ico" />
+
+		<link rel="stylesheet" type="text/css" href="../static/css/mis_estilos.css"/>
+
+		<!-- Enlace al CSS BootStrapSwatch / Flatly Flat and modern-->
+		<link rel="stylesheet"  href="../static/css/bootstrap.min.css"  crossorigin="anonymous"/>
+
+     </head>
+
+     <!-- Inicio del Body -->
+     <body    onload="startTime()"> 
+		<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+			<div class="container-fluid">
+			    <a class="navbar-brand" href="/admin/menup">Administración</a>
+			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="collapse navbar-collapse" id="navbarColor01">
+				     <ul class="navbar-nav me-auto">
+				     	<li class="nav-item dropdown">
+			          		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Archivo</a>
+					          <div class="dropdown-menu">
+						            <a class="dropdown-item" href="/tmcargos/menu">TMCargos</a>
+						            <a class="dropdown-item" href="/reportes/menu">TDRETARDOS</a>
+						            <a class="dropdown-item" href="#">TMaestro 3</a>
+						            <div class="dropdown-divider"></div>
+						            <a class="dropdown-item" href="#">TMaestro 4</a>
+					          </div>
+					     </li>
+
+				     	<li class="nav-item dropdown">
+			          		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Procesos</a>
+					          <div class="dropdown-menu">
+						            <a class="dropdown-item" href="#">Registar Retardo</a>
+						            <a class="dropdown-item" href="#">Proceso 2</a>
+						            <a class="dropdown-item" href="#">Proceso 3</a>
+						            <div class="dropdown-divider"></div>
+						            <a class="dropdown-item" href="#">Proceso 4</a>
+					          </div>
+					     </li>
+
+				     	<li class="nav-item dropdown">
+			          		<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a>
+					          <div class="dropdown-menu">
+						            <a class="dropdown-item" href="#">Reporte 1</a>
+						            <a class="dropdown-item" href="#">Reporte 2</a>
+						            <a class="dropdown-item" href="#">Reporte 3</a>
+						            <div class="dropdown-divider"></div>
+						            <a class="dropdown-item" href="#">Reporte 4</a>
+					          </div>
+					     </li>					     
+
+				        	<li class="nav-item">
+				         	 	<a class="nav-link" href="/login/cerrar">cerrar</a>
+				        	</li>
+
+				     </ul>
+				     <div class="d-flex  ">
+				     	<p class="form-control me-sm-2">
+				     		Usuario@ &nbsp; &nbsp; &nbsp; <b> {{ session["xape"]}}, {{ session["xusuario"]}} </b>
+				     	</p>
+				     	
+				     </div>
+			    </div>
+			</div>
+		</nav>
+
+
+

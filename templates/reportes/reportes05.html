@@ -1,0 +1,37 @@
+		<!-- tmcargos05_reporte.hmtl: Progama para construir la opción Reporte del Módulo  TMCargos.  -->
+
+		{% include 'admin/p03_menup01_cabecera.html' %}
+
+		{% include 'reportes/reportes02.html' %}	
+
+		<!--- bloque_datos.html: Bloque para gestionar los datos de los proceso -->
+		<div class="container mt-5">
+			<h1 class="text-center">Información del Empleado</h1>
+		
+			{% if informacion %}
+				<div class="card mb-5 d-flex justify-content-center align-items-center">
+					<img class="w-25" src="https://img.freepik.com/foto-gratis/chico-guapo-seguro-posando-contra-pared-blanca_176420-32936.jpg" alt="">
+					<form action="/reportes/agregar_reporte" method="POST" class="w-100">
+						<h5 class="card-title border text-center w-100 border-dark p-2">Cédula: {{ informacion[0][0] }}</h5>
+						<h6 class="card-title border text-center w-100 border-dark p-2 mb-2">Nombre: {{ informacion[0][1] }}</h6>
+						<p class="card-title border text-center border-dark w-100 p-2">Cargo: {{ informacion[0][2] }}</p>
+						
+						<!-- Campo oculto para la cédula -->
+						<input type="hidden" name="cedula" value="{{ informacion[0][0] }}">
+						
+						<div class="text-center">
+							<button type="submit" value="Submit" class="btn btn-primary">Registrar Retardo</button>
+						</div>
+					</form>
+				</div>
+			{% else %}
+				<div class="alert alert-warning" role="alert">
+					No se encontró información para la cédula proporcionada.
+				</div>
+			{% endif %}
+		</div>
+		
+		
+		
+
+		{% include 'admin/p03_menup04_pie.html' %}

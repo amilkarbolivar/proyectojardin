@@ -1,0 +1,136 @@
+		<!-- tmcargos02_reporte.hmtl: Progama para construir la opción Agregar del Módulo  TMCargos.  -->
+
+		{% include 'admin/p03_menup01_cabecera.html' %}
+
+		{% include 'tmcargos/tmcargos01_submenu.html' %}		
+
+		<!--- bloque_datos.html: Bloque para gestionar los datos de los proceso -->
+
+
+
+		<!--Inicio del Container Principal  -->
+		<!--------------------------------- -->
+		<div class="container text-center">
+			<div class="mb-0 p-3 bg-light">
+				<div class="row">
+					<div class="col-md-4">
+							
+					</div>	
+					<div class="col-md-4">
+						<div class="card">	
+							<div class="card-header text-center">
+								<h4 style="color:black">Consultar / Modificar</h4>	
+							</div>
+							{% if mensaje != " " %}
+								<div class="card-footer text-center">
+									<div class="alert alert-danger" role="alert">
+										<strong> {{ mensaje }} </strong>
+									</div>
+								</div>
+							{% endif %}	
+
+							{% if cargo %}
+								<div class="card-body">
+									<!-- Tu formulario aquí -->
+									<form action="/tmcargos/modificar" method="POST">
+										<div class="mb-3">
+											<label for="txt_codcar"  class="form-label">Código</label>
+											<input type="text" id="txt_codcar" name="txt_codcar"  class="form-control"
+																					value = "{{ cargo[0]}}" hidden>
+											<p class="form-control" align="Justify" style="background-color: azure;">
+												<b>{{ cargo[0] }}</b>
+											</p>
+										</div>
+										<div class="mb-3">
+											<label for="txt_descripcion" class="form-label">Descripción: </label>
+											<input type="text" id="txt_descripcion" name="txt_descipcion" class="form-control"  
+																					value ="{{ cargo[1] }}" />
+										</div>
+
+										<div class="mb-3">
+											<label for="txt_sueldo" class="form-label">Sueldo: </label>
+											<input type="text" id="txt_sueldo" name="txt_sueldo"  
+																				class="form-control text-end" 
+																				value ="{{ cargo[2] }}"/>
+										</div>
+
+										<div class="mb-3">
+											<label for="txt_fkcpds" class="form-label">Status </label>
+											<input type="text" id="txt_fkcods" name="txt_fkcods"  
+																				class="form-control text-end" 
+																				value ="{{ cargo[3] }}"/>
+										</div>										
+										
+										
+										<div class="text-center">
+											<button type="submit" value="Submit" class="btn btn-primary"
+																	title="Click para Modificar un  registro">
+												Modificar2
+											</button>
+											&nbsp;
+											&nbsp;
+											&nbsp;
+											&nbsp;
+											<a href="{{ url_for('tmcargos.eliminar', xcodcar = cargo[0]) }}" 
+																class="btn btn-danger btn-delete"
+																title="Click para eliminar este registro...">
+												Eliminar
+											</a>
+											&nbsp;
+											&nbsp;
+											&nbsp;
+											&nbsp;
+											<a href="/tmcargos/menu" class="btn btn-outline-info"
+													title="Click para limpiar la consulta">
+												Limpiar
+											</a>
+										</div>
+									</form>
+								</div>
+
+							{% else %}
+
+								<!--  class="card card-body" -->
+								<div  class="card card-body">
+									<form  action="/tmcargos/consultar" method="POST">
+										<div class="mb-3">
+											<label for="txt_codcar"  class="form-label">Código</label>
+											<input type="text" id="txt_codcar" name="txt_codcar" 
+														placeholder="Ingrese el código del cargo" class="form-control">
+										</div>
+										<div class="text-center">
+											<button type="submit" value="Submit" class="btn btn-primary"
+																	title="Click para realizar la busqueda...">
+												Buscar
+											</button>
+											&nbsp;
+											&nbsp;
+											&nbsp;
+											<a href="/tmcargos/consultar" 
+														class="btn btn-outline-info"
+														title="Click para limpiar el formulario...">
+												Limpiar
+											</a>
+										</div>	
+									</form>
+								</div>
+							{% endif %}	
+						</div>	
+					</div>
+					<div class="col-md-4">
+							
+					</div>							
+				</div>
+			</div>
+			<br/>
+			<br/>
+			<img src="../static/imagenes/pie.gif" width="600" height="17" alt="Regla horizontal"/>
+			<br/>			
+			<br/>
+		</div>
+		<!--Fin del Container Principal -->
+		<!--------------------------------- -->
+
+
+
+		{% include 'admin/p03_menup04_pie.html' %}

@@ -1,0 +1,41 @@
+{% include 'admin/p03_menup01_cabecera.html' %}
+
+{% include 'reportes/reportes02.html' %}	
+
+
+<div class="container mt-5">
+    <h1 class="text-center">Información de retardos del empleado</h1>
+	<img class="w-25" src="https://img.freepik.com/foto-gratis/chico-guapo-seguro-posando-contra-pared-blanca_176420-32936.jpg" alt="">
+    {% if reportes %}
+    <table class="table table-bordered mt-4">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="text-center">Cédula</th>
+                <th scope="col" class="text-center">Nombre</th>
+                <th scope="col" class="text-center">Cargo</th>
+                <th scope="col" class="text-center">Excusa</th>
+                <th scope="col" class="text-center">Fecha</th>
+                <th scope="col" class="text-center">Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for retardo in reportes %}
+            <tr>
+                <td class="text-center">{{ retardo[1] }}</td>
+                <td class="text-center">{{ retardo[2] }}</td>
+                <td class="text-center">{{ retardo[4] }}</td>
+                <td class="text-center">{{ retardo[3] }}</td>
+                <td class="text-center">{{ retardo[5] }}</td>
+                <td class="text-center">{{ retardo[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <div class="alert alert-warning text-center" role="alert">
+            No se encontraron retardos para este empleado.
+        </div>
+    {% endif %}
+</div>
+
+{% include 'admin/p03_menup04_pie.html' %}

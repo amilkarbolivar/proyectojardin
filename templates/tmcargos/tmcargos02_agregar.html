@@ -1,0 +1,75 @@
+		<!-- tmcargos02_reporte.hmtl: Progama para construir la opción Agregar del Módulo  TMCargos.  -->
+
+		{% include 'admin/p03_menup01_cabecera.html' %}
+
+		{% include 'tmcargos/tmcargos01_submenu.html' %}		
+
+		<!--- bloque_datos.html: Bloque para gestionar los datos de los proceso -->
+
+
+
+		<!--Inicio del Container Principal  -->
+		<!--------------------------------- -->
+		<div class="container text-center">
+			<div class="mb-0 p-3 bg-light">
+				<div class="row">
+					<div class="col-md-4">
+							
+					</div>	
+					<div class="col-md-4">
+						<div class="card">	
+							<div class="card-header text-center">
+								<h4 style="color:black">Agregar un cargo nuevo</h4>	
+							</div>
+							<div class="card-body">
+				                <!-- Tu formulario aquí -->
+				                <form action="/tmcargos/agregar" method="POST">
+										<div class="mb-3">
+											<label for="txt_descripcion" class="form-label">Descripción: </label>
+											<input type="text" class="form-control" name="txt_descipcion" id="txt_descripcion"
+																	placeholder="Escriba la descripción" required />
+										</div>
+
+										<div class="mb-3">
+											<label for="txt_sueldo" class="form-label">Sueldo: </label>
+											<input type="text" class="form-control" name="txt_sueldo" id="txt_sueldo"
+											 						placeholder="Escriba el sueldo" required/>
+										</div>		
+										<div class="text-center">
+											<button type="submit" value="Submit" class="btn btn-primary"
+																title="Click para agregar un nuevo registro">
+												Agregar
+											</button>
+											&nbsp;
+											&nbsp;
+											&nbsp;
+		  									<button type="reset" value="Reset" class="btn btn-outline-info"
+															title="Click para limpiar el formulario...">
+		  										Limpiar
+		  									</button>
+										</div>	
+									</form>
+							</div>
+							<div class="card-footer text-center">
+									<div class="alert alert-danger" role="alert">
+										<strong> {{ mensaje }} </strong>
+									</div>
+							</div>
+						</div>	
+					</div>
+					<div class="col-md-4">
+							
+					</div>							
+				</div>
+			</div>
+			<br/>
+			<br/>
+			<img src="../static/imagenes/pie.gif" width="600" height="17" alt="Regla horizontal"/>
+			<br/>			
+			<br/>
+		</div>
+		<!--Fin del Container Principal -->
+		<!--------------------------------- -->
+
+
+		{% include 'admin/p03_menup04_pie.html' %}

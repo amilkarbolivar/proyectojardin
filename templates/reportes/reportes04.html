@@ -1,0 +1,55 @@
+		<!-- tmcargos02_reporte.hmtl: Progama para construir la opción Agregar del Módulo  TMCargos.  -->
+
+        {% include 'admin/p03_menup01_cabecera.html' %}
+
+		{% include 'reportes/reportes02.html' %}		
+
+		<!--- bloque_datos.html: Bloque para gestionar los datos de los proceso -->
+
+
+
+		<!--Inicio del Container Principal  -->
+		<!--------------------------------- -->
+		<div class="container mt-5">
+			<h1 class="text-center">Registrar Retardo</h1>
+			<div class="card">
+				<div class="card-body">
+					<form action="/reportes/agregar_reporte2" method="POST">
+						<!-- Campo oculto para la cédula -->
+						<input type="hidden" name="cedula" value="{{ ced }}">
+		
+						<div class="mb-3">
+							<label for="excusa" class="form-label">Seleccione una excusa</label>
+							<select class="form-select" id="excusa" name="excusa" required>
+								<option value="" disabled selected>Elija una excusa</option>
+								{% for excusas in excusa %}
+									<option name="excusa" value="{{ excusas[0] }}">{{ excusas[1] }}</option>
+									
+								{% endfor %}
+							</select>
+						</div>
+		
+						<div class="mb-3">
+							<label for="hora" class="form-label">Hora </label>
+							<input type="time" class="form-control" name="hora" id="hora" required>
+						</div>
+		
+						<div class="mb-3">
+							<label for="fecha" class="form-label">Fecha</label>
+							<input type="date" class="form-control" name="fecha" id="fecha" required>
+						</div>
+		
+						<div class="text-center">
+							<button value="submit" type="submit" class="btn btn-primary">Enviar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<!--Fin del Container Principal -->
+		<!--------------------------------- -->
+
+
+
+		{% include 'admin/p03_menup04_pie.html' %}

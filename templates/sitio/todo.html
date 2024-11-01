@@ -1,0 +1,133 @@
+<!-- Inicio Bloque Cabecera.html -->
+<!DOCTYPE html>
+<html lang="es">
+     <head>
+     	<meta charset="utf-8"/>
+		<title>Proyecto Jardín</title>
+		<meta name="description" content="Proyecto Python - BootStarp - PostgreSQL"/>
+		<meta name="author" content="Sergio Capacho" />
+		<meta name="keywords" content="Html, bootstrap, Python, PostGreSQL" />
+
+		<LINK REL="SHORTCUT ICON" type="image/x-icon" HREF="../static/imagenes/flor01.ico" />
+		<link rel="stylesheet" type="text/css" href="../static/css/mis_estilos.css">
+
+		<!-- Enlace al CSS BootStrapSwatch / Flatly Flat and modern-->
+		<link rel="stylesheet"  href="../static/css/bootstrap.min.css"  crossorigin="anonymous">
+
+     </head>
+     <body> 
+		<nav class="navbar navbar-expand navbar-dark bg-primary">
+			<div class="nav navbar-nav">
+				<a class="nav-item nav-link active" href="/"> 
+					Inicio
+				</a>
+				<a class="nav-item nav-link" href="/productos">
+					Productos
+				</a>
+				<a class="nav-item nav-link" href="/cursos">
+					Cursos
+				</a>
+				<a class="nav-item nav-link" href="/galeria">
+					Galeria
+				</a>				
+				<a class="nav-item nav-link" href="#">
+					Administración
+				</a>				
+			</div>
+		</nav>
+
+<!-- Fin Bloque Cabecera.html -->
+<!------------------------------------------------------->
+
+
+<!-- Inicio Bloque Index.html -->
+
+		<!-- incluir el archivo cabecera.html desde la
+			 				carpeta sitio (OJO es la carpeta actual) -->
+		{% include 'sitio/cabecera.html' %}
+
+		<!--Inicio del Container Principal  -->
+		<div class="container text-center">
+
+			<br/>
+			<br/>
+			<img src="../static/imagenes/gato01.gif"  alt="Gato animado">
+			<br/>
+			<BR/>
+			<img src="../static/imagenes/logo_jardin.gif"  
+						width="300" height="100" alt="Logo del Jardín">
+			<BR/>
+			<br/>
+			Somos la mejor empresa de jardinería 
+			de todo el Norte de Santander.
+			<br/>
+			<br/>
+			Te ofrecemos productos de gran calidad,
+			para todos los gustos, tamaños y bolsillos.
+			<br/> 
+			<br/>
+			Visitanos en nuestra sede de Villa del Rosario - Norte de Santander, 
+			<br/>
+			justo la lado de una Universidad de pamplona. 
+			<br/>
+			<br/>
+			Cuando nos visites .... sientase libre de verlo todo.
+			<br/>
+			<br/> 
+			Si necesita ayuda, no dude en preguntar.<br/>
+			Le atenderemos con el mayor placer.
+			<BR/>
+			<br/>
+			<B>Además, Si nos visitas el día de tú cumpleaños tenemos 
+			un obsequio especial para tí </B>
+			<br/>
+			<br/>
+			<img src="../static/imagenes/pie.gif" width="600" height="17" alt="Regla horizontal">
+			<br/>			
+			<br/>
+
+		</div>
+		<!--Fin del Container Principal -->
+
+
+		{% include 'sitio/pie_de_pagina.html' %}
+		<!-- incluir el archivo pie.html desde la
+			 					carpeta sitio (OJO es la carpeta actual) -->
+
+<!-- Fin bloque Index.html -->
+<!------------------------------------------------------->
+
+
+
+
+<!-- Inicio Bloque Pie.html -->
+<!------------------------------------------------------->
+
+
+		<footer class="container text-center p-3" >
+			<div class="row">
+				<div class="col-md-4 text-center">
+					<img src="../static/imagenes/Logo_01.png" alt="Logo Systemcap.Net 1" width="63px" height="50px" />
+				</div>
+				<div class="col-md-4 text-center">
+					<h5>	Copyright © 2024 Systemcap.Net 
+						<br/>
+						Todos los derechos reservados
+					</h5>
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="../static/imagenes/Logo_02.png" alt="Logo Systemcap.Net 2" width="63px" height="50px"/>
+				</div>				
+			</div>
+		</footer>
+
+
+
+    		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+     </body>
+</html>
+
+<!-- Fin Bloque Pie.html -->
+<!------------------------------------------------------->

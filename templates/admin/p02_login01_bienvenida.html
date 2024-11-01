@@ -1,0 +1,32 @@
+		<!-- p02_login01_bienvenida.hmtl:Paso # 2 del Login. 
+					Progama con el código de bienvenida del usuario al sistema --> 
+
+		<!--Inicio del Container Principal  -->
+		<div class="container text-center">
+
+			<br/>
+			<br/>
+			<div class="p-5 bg-light">
+				<h1 class="display-3">
+					Bienvenid@ <b> {{ session["xape"] }} , {{ session["xusuario"] }} </b> 
+					<br/>
+					al Módulo Administrativo....
+				</h1>
+				<p class="lead">Espacio para administrar los datos del sistema de la empresa el Jardín</p>
+				<hr class="my-3"/>
+				<p class="text-center">
+					<a class="btn btn-danger btn-lg" href="/admin/menup" role="button">
+						Click para Empresar
+					</a>
+				</p>				
+				
+			</div>
+			<br/>
+			<br/>
+			<img src="../static/imagenes/pie.gif" width="600" height="17" alt="Regla horizontal"/>
+			<br/>			
+			<br/>
+
+		</div>
+		<!--Fin del Container Principal -->
+
