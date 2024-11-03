@@ -30,7 +30,7 @@ def menu():
 
 
 
-#4.3.- Agregar un TMCargo
+
 @obj_tmreportes.route('/agregar')
 def agregar01():
     return render_template('/reportes/reportes03.html')
@@ -69,10 +69,10 @@ def reporte():
 @obj_tmreportes.route('/fecha', methods=['GET', 'POST'])
 def reporte_fecha():
     if request.method == 'POST':
-        cedula = request.form.get('cedula')
+   
         fecha= request.form.get('fecha')
         fecha2= request.form.get('fecha2')
-        reporte=reportes_por_fecha(cedula,fecha,fecha2)
+        reporte=reportes_por_fecha(fecha,fecha2)
 
 
         return render_template('/reportes/reportes09.html', reportes=reporte)

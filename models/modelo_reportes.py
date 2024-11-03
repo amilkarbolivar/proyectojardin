@@ -41,8 +41,8 @@ GROUP BY
 
 
     # Paso 3 ---> Se ejecuta la consulta SQL
-    cursor.execute(sql, (cedula,))  # Usa una tupla para pasar parámetros
-    resultado = cursor.fetchall()  # fetchall() para obtener todos los registros que coincidan
+    cursor.execute(sql, (cedula,)) 
+    resultado = cursor.fetchall()  
 
     # Paso 4 ---> Se cierra la conexión con la base de datos
     cursor.close()
@@ -147,8 +147,7 @@ def consulta_reportes(cedula):
     # Paso 5 ---> Retornar resultado
     return reportes
 
-
-def reportes_por_fecha(cedula, fecha, fecha2):
+def reportes_por_fecha(fecha, fecha2):
     # Paso 1 ---> Se establece la conexión con la base de datos
     conexion = cadenaConexion()
     cursor = conexion.cursor()
@@ -175,15 +174,14 @@ def reportes_por_fecha(cedula, fecha, fecha2):
     JOIN 
         tmcargos c ON e.fkcodcar = c.codcar
     WHERE 
-         r.fkcedemple = %s AND 
-         r.fecha BETWEEN %s AND %s
+        r.fecha BETWEEN %s AND %s
     ORDER BY 
         r.fecha DESC, r.hora DESC;
     """
 
     try:
         # Paso 3 ---> Se ejecuta la consulta SQL
-        cursor.execute(sql, (cedula, fecha, fecha2))  # Usa una tupla para pasar parámetros
+        cursor.execute(sql, (fecha, fecha2))  # Usa una tupla para pasar las fechas como parámetros
         reportes = cursor.fetchall()  # fetchall() para obtener todos los registros que coincidan
         
     except Exception as e:
@@ -197,4 +195,3 @@ def reportes_por_fecha(cedula, fecha, fecha2):
 
     # Paso 5 ---> Retornar resultado
     return reportes
-

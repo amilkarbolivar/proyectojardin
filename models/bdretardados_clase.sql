@@ -16,16 +16,16 @@ SELECT 'Paso 02: Listado BDs Actuales.....'  AS paso, pg_sleep(02);
 
 -- 0 Eliminando la base de datos si existe
 SELECT 'Paso 03: Eliminar la  BDretardados2 si Existe.....'  AS paso, pg_sleep(05);
-DROP DATABASE IF EXISTS bdretardados;
+DROP DATABASE IF EXISTS bdretardados3;
 
 \l
 
 
 SELECT 'Paso 04: Crear BDretardados.....'  AS paso, pg_sleep(05);
-create database bdretardados with ENCODING='UTF8';
+create database bdretardados3 with ENCODING='UTF8';
 
 
-CREATE DATABASE bdretardados
+CREATE DATABASE bdretardados3
        OWNER = postgres
        ENCODING = 'UTF8'
        TABLESPACE = pg_default
